@@ -1,0 +1,19 @@
+personal "Mateo Álvarez" "Bogotá, Colombia"
+
+contact "mateo.alvarez@correo.com" "mateoalvarez" "+57 301 222 3344"
+
+experience "Data Scientist" "Nubank" 2 "Built churn-prediction models for the credit card portfolio."
+experience "Machine Learning Intern" "Globant" 1 "Prototyped a recommendation engine for an e-commerce client."
+experience "Research Assistant" "Universidad Nacional" 1 "Assisted in NLP research for Spanish-language text classification."
+
+education "Universidad Nacional de Colombia" "M.Sc. in Computer Science" "Thesis on transformer-based text classification."
+education "Universidad Nacional de Colombia" "B.Sc. in Systems Engineering" "Undergraduate thesis on recommendation systems."
+
+skill "Python"
+skill "PyTorch"
+skill "SQL"
+
+qualification "Machine Learning" Expert
+qualification "Data Engineering" Intermediate
+
+classification "Machine Learning Engineer"

@@ -1,0 +1,13 @@
+personal "Ricardo Vargas" "Neiva, Colombia"
+
+contact "ricardo.vargas@correo.com" "ricardovargas" "+57 312 400 5566"
+
+experience "DevOps Engineer" "Platzi" 4 "Managed CI/CD pipelines and cloud infrastructure."
+
+education "Universidad Nacional" "B.Sc. in Systems Engineering" "Focused on distributed systems."
+
+qualification "Cloud Infrastructure" Expert
+qualification "Kubernetes" Intermediate
+qualification "Terraform" Beginner
+
+classification "DevOps Engineer"
