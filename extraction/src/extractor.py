@@ -3,6 +3,8 @@ import os
 import re
 import sys
 
+from skills import extract_skills
+
 OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "output")
 
 EMAIL = r"[\w.+-]+@[\w-]+\.[\w.-]+"
@@ -112,6 +114,7 @@ def extract(text):
             "degrees": clean(degrees),
             "institutions": clean(institutions),
         },
+        "skills": extract_skills(text),
     }
 
 def extract_file(path, save=True):
