@@ -1,0 +1,13 @@
+Wednesday Addams
+Bogota, Colombia
+wednesday.addams@correo.com | +57 312 400 5566
+github.com/wednesdayaddams | linkedin.com/in/wednesday-addams
+
+3 years of experience developing web applications.
+Full Stack Developer at Nevermore Labs.
+
+Education:
+B.Sc. in Systems Engineering - Universidad ICESI
+
+Technical Skills:
+JS, React.js, NodeJS, Postgres, Git.
