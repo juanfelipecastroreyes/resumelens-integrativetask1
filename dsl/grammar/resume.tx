@@ -1,0 +1,41 @@
+Resume:
+    personal_info=PersonalInfo
+    contact=Contact
+    experiences*=Experience
+    education*=Education
+    skills*=Skill
+    qualifications*=Qualification
+    classification=Classification
+;
+
+PersonalInfo:
+    'personal' name=STRING location=STRING
+;
+
+Contact:
+    'contact' email=STRING github=STRING phone=STRING?
+;
+
+Experience:
+    'experience' position=STRING company=STRING years=INT description=STRING
+;
+
+Education:
+    'education' institution=STRING degree=STRING description=STRING
+;
+
+Skill:
+    'skill' name=STRING
+;
+
+Qualification:
+    'qualification' name=STRING level=Level
+;
+
+Level:
+    'Beginner' | 'Intermediate' | 'Expert'
+;
+
+Classification:
+    'classification' label=STRING
+;
