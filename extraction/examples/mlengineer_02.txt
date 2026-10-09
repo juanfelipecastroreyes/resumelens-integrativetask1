@@ -1,0 +1,13 @@
+Gwen Stacy
+Bogota, Colombia
+gwen.stacy@correo.com | (601) 555 0199
+linkedin.com/in/gwenstacy
+
+4 years of experience as a Machine Learning Engineer.
+
+Education:
+M.Sc. in Data Science - Universidad Nacional de Colombia
+
+Skills: python, pandas, sklearn, scikit learn, Tensor Flow, Py Torch,
+jupyter notebooks, SQL Server, AWS, Git. Experience in machine learning
+model development and deep learning.

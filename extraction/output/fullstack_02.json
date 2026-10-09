@@ -1,0 +1,39 @@
+{
+  "contact": {
+    "emails": [
+      "pugsley@correo.com"
+    ],
+    "phones": [],
+    "github": [
+      "pugsleyaddams"
+    ],
+    "linkedin": []
+  },
+  "experience": {
+    "years": [
+      5
+    ],
+    "positions": [
+      "Senior Backend Developer"
+    ]
+  },
+  "education": {
+    "degrees": [
+      "Bachelor of Science in Computer Science"
+    ],
+    "institutions": [
+      "Universidad del Valle"
+    ]
+  },
+  "skills": [
+    "Javascript",
+    "TypeScript",
+    "ReactJS",
+    "Node.js",
+    "Spring Boot",
+    "REST APIs",
+    "PostgreSQL",
+    "MongoDB",
+    "Docker"
+  ]
+}

@@ -1,0 +1,13 @@
+Pugsley Addams
+Cali, Colombia
+pugsley@correo.com
+https://github.com/pugsleyaddams
+
+5 years of professional experience building web platforms.
+Senior Backend Developer
+
+Education:
+Bachelor of Science in Computer Science, Universidad del Valle
+
+Skills: Javascript, TypeScript, ReactJS, Node.js, Spring Boot, PostgreSQL,
+MongoDB, Docker, GitHub. Strong knowledge of REST APIs and microservices.
