@@ -1,0 +1,31 @@
+{
+  "contact": {
+    "emails": [
+      "maryjane.watson@correo.com"
+    ],
+    "phones": [],
+    "github": [
+      "mjwatson"
+    ],
+    "linkedin": []
+  },
+  "experience": {
+    "years": [
+      2
+    ],
+    "positions": []
+  },
+  "education": {
+    "degrees": [],
+    "institutions": []
+  },
+  "skills": [
+    "Python",
+    "SQL",
+    "Git",
+    "Pandas",
+    "NumPy",
+    "Scikit-learn",
+    "TensorFlow"
+  ]
+}

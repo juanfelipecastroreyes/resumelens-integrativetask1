@@ -1,0 +1,39 @@
+{
+  "contact": {
+    "emails": [
+      "wednesday.addams@correo.com"
+    ],
+    "phones": [
+      "+57 312 400 5566"
+    ],
+    "github": [
+      "wednesdayaddams"
+    ],
+    "linkedin": [
+      "wednesday-addams"
+    ]
+  },
+  "experience": {
+    "years": [
+      3
+    ],
+    "positions": [
+      "Full Stack Developer"
+    ]
+  },
+  "education": {
+    "degrees": [
+      "B.Sc. in Systems Engineering"
+    ],
+    "institutions": [
+      "Universidad ICESI"
+    ]
+  },
+  "skills": [
+    "JS",
+    "React.js",
+    "NodeJS",
+    "Postgres",
+    "Git"
+  ]
+}

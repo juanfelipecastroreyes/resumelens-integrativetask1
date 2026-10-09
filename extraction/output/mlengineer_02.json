@@ -1,0 +1,43 @@
+{
+  "contact": {
+    "emails": [
+      "gwen.stacy@correo.com"
+    ],
+    "phones": [
+      "(601) 555 0199"
+    ],
+    "github": [],
+    "linkedin": [
+      "gwenstacy"
+    ]
+  },
+  "experience": {
+    "years": [
+      4
+    ],
+    "positions": [
+      "Machine Learning Engineer"
+    ]
+  },
+  "education": {
+    "degrees": [
+      "M.Sc. in Data Science"
+    ],
+    "institutions": [
+      "Universidad Nacional de Colombia"
+    ]
+  },
+  "skills": [
+    "python",
+    "SQL",
+    "Git",
+    "AWS",
+    "pandas",
+    "sklearn",
+    "scikit learn",
+    "Tensor Flow",
+    "Py Torch",
+    "machine learning",
+    "deep learning"
+  ]
+}
