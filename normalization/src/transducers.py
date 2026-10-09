@@ -1,57 +1,76 @@
-import os
-
 from pyformlang.fst import FST
 
-END = "#"
-
 CATEGORIES = {
-    "languages": {
-        "PYTHON": ["python", "python3"],
-        "JAVA": ["java"],
-        "JAVASCRIPT": ["javascript", "js"],
-        "TYPESCRIPT": ["typescript", "ts"],
-        "SQL": ["sql"],
-        "R_LANG": ["r"],
-    },
-    "frontend": {
-        "HTML": ["html", "html5"],
-        "CSS": ["css", "css3"],
-        "REACT": ["react", "reactjs"],
-        "ANGULAR": ["angular", "angularjs"],
-        "VUE": ["vue", "vuejs"],
-    },
-    "backend": {
-        "NODE_JS": ["node", "nodejs"],
-        "EXPRESS": ["express", "expressjs"],
-        "SPRING_BOOT": ["spring", "springboot"],
-        "DJANGO": ["django"],
-        "FLASK": ["flask"],
-        "REST_API": ["rest", "restful", "restapi", "restapis"],
-    },
-    "databases": {
-        "POSTGRESQL": ["postgres", "postgresql"],
-        "MYSQL": ["mysql"],
-        "MONGODB": ["mongo", "mongodb"],
-    },
-    "devops": {
-        "DOCKER": ["docker"],
-        "GIT": ["git"],
-        "AWS": ["aws", "amazonwebservices"],
-        "CI_CD": ["cicd"],
-    },
-    "data_ml": {
-        "PANDAS": ["pandas"],
-        "NUMPY": ["numpy"],
-        "SCIKIT_LEARN": ["scikitlearn", "sklearn"],
-        "TENSORFLOW": ["tensorflow", "tf"],
-        "PYTORCH": ["pytorch", "torch"],
-        "KERAS": ["keras"],
-        "MACHINE_LEARNING": ["machinelearning", "ml"],
-        "DEEP_LEARNING": ["deeplearning"],
-        "NLP": ["nlp", "naturallanguageprocessing"],
-        "COMPUTER_VISION": ["computervision", "cv"],
-        "MLOPS": ["mlops"],
-    },
+    "languages": [
+        ["python", "PYTHON"],
+        ["python3", "PYTHON"],
+        ["java", "JAVA"],
+        ["javascript", "JAVASCRIPT"],
+        ["js", "JAVASCRIPT"],
+        ["typescript", "TYPESCRIPT"],
+        ["ts", "TYPESCRIPT"],
+        ["sql", "SQL"],
+        ["r", "R_LANG"],
+    ],
+    "frontend": [
+        ["html", "HTML"],
+        ["html5", "HTML"],
+        ["css", "CSS"],
+        ["css3", "CSS"],
+        ["react", "REACT"],
+        ["reactjs", "REACT"],
+        ["angular", "ANGULAR"],
+        ["angularjs", "ANGULAR"],
+        ["vue", "VUE"],
+        ["vuejs", "VUE"],
+    ],
+    "backend": [
+        ["node", "NODE_JS"],
+        ["nodejs", "NODE_JS"],
+        ["express", "EXPRESS"],
+        ["expressjs", "EXPRESS"],
+        ["spring", "SPRING_BOOT"],
+        ["springboot", "SPRING_BOOT"],
+        ["django", "DJANGO"],
+        ["flask", "FLASK"],
+        ["rest", "REST_API"],
+        ["restful", "REST_API"],
+        ["restapi", "REST_API"],
+        ["restapis", "REST_API"],
+    ],
+    "databases": [
+        ["postgres", "POSTGRESQL"],
+        ["postgresql", "POSTGRESQL"],
+        ["mysql", "MYSQL"],
+        ["mongo", "MONGODB"],
+        ["mongodb", "MONGODB"],
+    ],
+    "devops": [
+        ["docker", "DOCKER"],
+        ["git", "GIT"],
+        ["aws", "AWS"],
+        ["amazonwebservices", "AWS"],
+        ["cicd", "CI_CD"],
+    ],
+    "data_ml": [
+        ["pandas", "PANDAS"],
+        ["numpy", "NUMPY"],
+        ["scikitlearn", "SCIKIT_LEARN"],
+        ["sklearn", "SCIKIT_LEARN"],
+        ["tensorflow", "TENSORFLOW"],
+        ["tf", "TENSORFLOW"],
+        ["pytorch", "PYTORCH"],
+        ["torch", "PYTORCH"],
+        ["keras", "KERAS"],
+        ["machinelearning", "MACHINE_LEARNING"],
+        ["ml", "MACHINE_LEARNING"],
+        ["deeplearning", "DEEP_LEARNING"],
+        ["nlp", "NLP"],
+        ["naturallanguageprocessing", "NLP"],
+        ["computervision", "COMPUTER_VISION"],
+        ["cv", "COMPUTER_VISION"],
+        ["mlops", "MLOPS"],
+    ],
 }
 
 def simplify(text):
@@ -61,28 +80,22 @@ def simplify(text):
             result = result + char
     return result
 
-def state_order(state):
-    if state == "qf":
-        return 1000000
-    return int(state[1:])
-
-def build_transducer(spellings_by_token):
+def build_transducer(pairs):
     fst = FST()
     fst.add_start_state("q0")
-    fst.add_final_state("qf")
-    names = {"": "q0"}
     count = 0
-    for token in spellings_by_token:
-        for spelling in spellings_by_token[token]:
-            prefix = ""
-            for char in spelling:
-                new_prefix = prefix + char
-                if new_prefix not in names:
-                    count = count + 1
-                    names[new_prefix] = "q" + str(count)
-                    fst.add_transition(names[prefix], char, names[new_prefix], [])
-                prefix = new_prefix
-            fst.add_transition(names[prefix], END, "qf", [token])
+    for pair in pairs:
+        spelling = pair[0]
+        token = pair[1]
+        state = "q0"
+        output = [token]
+        for letter in spelling:
+            count = count + 1
+            next_state = "q" + str(count)
+            fst.add_transition(state, letter, next_state, output)
+            output = []
+            state = next_state
+        fst.add_final_state(state)
     return fst
 
 def build_all():
@@ -92,16 +105,15 @@ def build_all():
     return transducers
 
 def normalize_skill(skill, transducers):
-    symbols = list(simplify(skill))
-    symbols.append(END)
+    letters = list(simplify(skill))
     for category in transducers:
-        for output in transducers[category].translate(symbols):
-            return output[0]
+        outputs = list(transducers[category].translate(letters))
+        if len(outputs) > 0:
+            return outputs[0][0]
     return None
 
-def normalize(skills, transducers=None):
-    if transducers is None:
-        transducers = build_all()
+def normalize(skills):
+    transducers = build_all()
     tokens = []
     unknown = []
     for skill in skills:
@@ -111,35 +123,3 @@ def normalize(skills, transducers=None):
         elif token not in tokens:
             tokens.append(token)
     return {"tokens": tokens, "unknown": unknown}
-
-def describe(name, fst):
-    states = sorted(fst.states, key=state_order)
-    inputs = sorted(fst.input_symbols)
-    outputs = sorted(fst.output_symbols)
-    lines = ["Transducer: " + name]
-    lines.append("Q = {" + ", ".join(states) + "}")
-    lines.append("Sigma = {" + ", ".join(inputs) + "}")
-    lines.append("Gamma = {" + ", ".join(outputs) + "}")
-    lines.append("q0 = " + ", ".join(sorted(fst.start_states)))
-    lines.append("F = {" + ", ".join(sorted(fst.final_states)) + "}")
-    lines.append("delta and omega (state, input -> next state, output):")
-    for key in sorted(fst.transitions, key=lambda k: (state_order(k[0]), k[1])):
-        for next_state, output in fst.transitions[key]:
-            text = "ε"
-            if len(output) > 0:
-                text = " ".join(output)
-            lines.append("  (" + key[0] + ", " + key[1] + ") -> (" + next_state + ", " + text + ")")
-    return "\n".join(lines)
-
-def save_dot_files(folder, transducers=None):
-    if transducers is None:
-        transducers = build_all()
-    os.makedirs(folder, exist_ok=True)
-    for category in transducers:
-        transducers[category].write_as_dot(os.path.join(folder, category + ".dot"))
-
-if __name__ == "__main__":
-    all_transducers = build_all()
-    for category in all_transducers:
-        print(describe(category, all_transducers[category]))
-        print()

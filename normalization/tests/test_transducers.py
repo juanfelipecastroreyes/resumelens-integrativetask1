@@ -72,17 +72,15 @@ class TestVocabulary(unittest.TestCase):
     def test_every_spelling_gives_its_token(self):
         transducers = build_all()
         for category in CATEGORIES:
-            for token in CATEGORIES[category]:
-                for spelling in CATEGORIES[category][token]:
-                    self.assertEqual(normalize_skill(spelling, transducers), token)
+            for pair in CATEGORIES[category]:
+                self.assertEqual(normalize_skill(pair[0], transducers), pair[1])
 
     def test_no_spelling_is_used_twice(self):
         seen = []
         for category in CATEGORIES:
-            for token in CATEGORIES[category]:
-                for spelling in CATEGORIES[category][token]:
-                    self.assertNotIn(spelling, seen)
-                    seen.append(spelling)
+            for pair in CATEGORIES[category]:
+                self.assertNotIn(pair[0], seen)
+                seen.append(pair[0])
 
 class TestNormalize(unittest.TestCase):
     def test_assignment_example(self):
