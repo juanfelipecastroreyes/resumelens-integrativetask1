@@ -7,9 +7,15 @@ OUTPUT_DIR = Path(__file__).resolve().parent.parent / "output"
 
 def generate_markdown(model):
     lines = [f"# {model.personal_info.name}", "", "## Candidate Profile", "",
-             f"**Classification:** {model.classification.label}", "", "## Contact", "",
-             f"- Email: {model.contact.email}", f"- Location: {model.personal_info.location}",
-             f"- GitHub: {model.contact.github}"]
+             "**Classifications:**", ""]
+
+    for c in model.classifications:
+        lines.append(f"- {c.label}")
+    lines.append("")
+
+    lines += ["## Contact", "",
+              f"- Email: {model.contact.email}", f"- Location: {model.personal_info.location}",
+              f"- GitHub: {model.contact.github}"]
 
     if model.contact.phone:
         lines.append(f"- Phone: {model.contact.phone}")

@@ -1,0 +1,13 @@
+personal "Daniela Ortiz" "Medellín, Colombia"
+
+contact "daniela.ortiz@correo.com" "danielaortiz"
+
+skill "Python"
+skill "Docker"
+skill "AWS"
+
+qualification "Machine Learning" Intermediate
+qualification "Cloud Computing" Intermediate
+
+classification "Machine Learning Engineer"
+classification "Cloud Engineer"

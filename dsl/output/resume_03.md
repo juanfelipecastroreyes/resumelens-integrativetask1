@@ -2,7 +2,10 @@
 
 ## Candidate Profile
 
-**Classification:** Machine Learning Engineer
+**Classifications:**
+
+- Machine Learning Engineer
+- Data Scientist
 
 ## Contact
 
