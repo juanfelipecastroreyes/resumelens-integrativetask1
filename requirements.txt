@@ -1,2 +1,4 @@
 textX
 pyformlang
+streamlit
+pandas
