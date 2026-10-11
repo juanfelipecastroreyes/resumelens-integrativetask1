@@ -6,7 +6,7 @@ The DSL represents a candidate résumé profile as produced by ResumeLens. The
 language groups candidate information into seven categories, chosen to cover
 the minimum structure required by the assignment: personal information,
 contact information, professional experience, education, skills, normalized
-qualifications, and the classification result.
+qualifications, and the classification results.
 
 Per-category fields and multiplicity are documented in
 `docs/metamodel.md`, which lists the classes textX generates from this
@@ -30,6 +30,10 @@ this way.
   `email` and `location`/`github` for contact info, so `phone` was added as an
   optional field rather than mandatory, since not every résumé will include
   it.
+- **One or more classifications.** A candidate can fit several profiles at the
+  same time (for example Machine Learning Engineer and Cloud Engineer), so a
+  `Resume` accepts one or more `Classification` blocks (`+=`) instead of a single
+  one. At least one is still mandatory.
 - **`Classification.label` as a free STRING.** Kept open-ended rather than
   restricted to a fixed set of job categories, to avoid maintaining an
   enumerated list of every possible classification ResumeLens might produce.
@@ -55,7 +59,7 @@ this way.
 
 | Non-terminal | Made of |
 |---|---|
-| `Resume` | `PersonalInfo`, `Contact`, `Experience*`, `Education*`, `Skill*`, `Qualification*`, `Classification` |
+| `Resume` | `PersonalInfo`, `Contact`, `Experience*`, `Education*`, `Skill*`, `Qualification*`, `Classification+` |
 | `PersonalInfo` | `name`, `location` |
 | `Contact` | `email`, `github`, `phone` (optional) |
 | `Experience` | `position`, `company`, `years`, `description` |
@@ -67,7 +71,7 @@ this way.
 ## 4. EBNF rules
 
 ```
-Resume         ::= PersonalInfo Contact Experience* Education* Skill* Qualification* Classification
+Resume         ::= PersonalInfo Contact Experience* Education* Skill* Qualification* Classification+
 
 PersonalInfo   ::= "personal" name:STRING location:STRING
 
@@ -86,7 +90,7 @@ Classification ::= "classification" label:STRING
 
 ## 5. Example instances
 
-Two sample texts that a parser built from the rules above should
+Three sample texts that a parser built from the rules above should
 accept.
 
 **Example 1 — full profile, exercising repeated blocks:**
@@ -118,4 +122,18 @@ personal "Santiago Gómez" "Popayán, Colombia"
 contact "santiago.gomez@correo.com" "santiagogomez"
 
 classification "Data Analyst"
+```
+
+**Example 3 — one candidate with several classifications:**
+
+```
+personal "Daniela Ortiz" "Medellín, Colombia"
+
+contact "daniela.ortiz@correo.com" "danielaortiz"
+
+skill "Python"
+skill "Docker"
+
+classification "Machine Learning Engineer"
+classification "Cloud Engineer"
 ```

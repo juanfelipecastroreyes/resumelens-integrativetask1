@@ -1,0 +1,29 @@
+personal "Pugsley Addams" "Cali, Colombia"
+
+contact "pugsley@correo.com" "pugsleyaddams"
+
+experience "Senior Backend Developer" "Not specified" 5 "Not specified"
+
+education "Universidad del Valle" "Bachelor of Science in Computer Science" "Not specified"
+
+skill "Javascript"
+skill "TypeScript"
+skill "ReactJS"
+skill "Node.js"
+skill "Spring Boot"
+skill "REST APIs"
+skill "PostgreSQL"
+skill "MongoDB"
+skill "Docker"
+
+qualification "JAVASCRIPT" Expert
+qualification "TYPESCRIPT" Expert
+qualification "REACT" Expert
+qualification "NODE_JS" Expert
+qualification "SPRING_BOOT" Expert
+qualification "REST_API" Expert
+qualification "POSTGRESQL" Expert
+qualification "MONGODB" Expert
+qualification "DOCKER" Expert
+
+classification "Full Stack Developer"

@@ -1,0 +1,32 @@
+personal "Gwen Stacy" "Bogota, Colombia"
+
+contact "gwen.stacy@correo.com" "" "(601) 555 0199"
+
+experience "Machine Learning Engineer" "Not specified" 4 "Not specified"
+
+education "Universidad Nacional de Colombia" "M.Sc. in Data Science" "Not specified"
+
+skill "python"
+skill "SQL"
+skill "Git"
+skill "AWS"
+skill "pandas"
+skill "sklearn"
+skill "scikit learn"
+skill "Tensor Flow"
+skill "Py Torch"
+skill "machine learning"
+skill "deep learning"
+
+qualification "PYTHON" Intermediate
+qualification "SQL" Intermediate
+qualification "GIT" Intermediate
+qualification "AWS" Intermediate
+qualification "PANDAS" Intermediate
+qualification "SCIKIT_LEARN" Intermediate
+qualification "TENSORFLOW" Intermediate
+qualification "PYTORCH" Intermediate
+qualification "MACHINE_LEARNING" Intermediate
+qualification "DEEP_LEARNING" Intermediate
+
+classification "Machine Learning Engineer"

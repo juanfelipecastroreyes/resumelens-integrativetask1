@@ -23,7 +23,8 @@ class Resume:
         for q in model.qualifications:
             print(f"Qualification: {q.name} ({q.level})")
 
-        print(f"Classification: {model.classification.label}")
+        for c in model.classifications:
+            print(f"Classification: {c.label}")
 
 
 resume_path = sys.argv[1]

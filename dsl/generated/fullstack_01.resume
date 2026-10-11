@@ -1,0 +1,21 @@
+personal "Wednesday Addams" "Bogota, Colombia"
+
+contact "wednesday.addams@correo.com" "wednesdayaddams" "+57 312 400 5566"
+
+experience "Full Stack Developer" "Not specified" 3 "Not specified"
+
+education "Universidad ICESI" "B.Sc. in Systems Engineering" "Not specified"
+
+skill "JS"
+skill "React.js"
+skill "NodeJS"
+skill "Postgres"
+skill "Git"
+
+qualification "JAVASCRIPT" Intermediate
+qualification "REACT" Intermediate
+qualification "NODE_JS" Intermediate
+qualification "POSTGRESQL" Intermediate
+qualification "GIT" Intermediate
+
+classification "Full Stack Developer"

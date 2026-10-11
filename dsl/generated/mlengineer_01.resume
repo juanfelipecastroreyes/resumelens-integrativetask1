@@ -1,0 +1,23 @@
+personal "Mary Jane Watson" "Medellin, Colombia"
+
+contact "maryjane.watson@correo.com" "mjwatson"
+
+experience "Not specified" "Not specified" 2 "Not specified"
+
+skill "Python"
+skill "SQL"
+skill "Git"
+skill "Pandas"
+skill "NumPy"
+skill "Scikit-learn"
+skill "TensorFlow"
+
+qualification "PYTHON" Intermediate
+qualification "SQL" Intermediate
+qualification "GIT" Intermediate
+qualification "PANDAS" Intermediate
+qualification "NUMPY" Intermediate
+qualification "SCIKIT_LEARN" Intermediate
+qualification "TENSORFLOW" Intermediate
+
+classification "Machine Learning Engineer"
