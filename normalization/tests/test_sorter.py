@@ -24,6 +24,21 @@ class TestSortTokens(unittest.TestCase):
         expected = ["PYTHON", "SQL", "PANDAS", "SCIKIT_LEARN", "TENSORFLOW", "GIT"]
         self.assertEqual(sort_tokens(tokens, "ml_engineer"), expected)
 
+    def test_ml_engineer_with_a_database_name(self):
+        tokens = ["GIT", "TENSORFLOW", "POSTGRESQL", "PANDAS", "PYTHON"]
+        expected = ["PYTHON", "POSTGRESQL", "PANDAS", "TENSORFLOW", "GIT"]
+        self.assertEqual(sort_tokens(tokens, "ml_engineer"), expected)
+
+    def test_data_scientist(self):
+        tokens = ["NLP", "GIT", "PANDAS", "SQL", "R_LANG"]
+        expected = ["R_LANG", "SQL", "PANDAS", "NLP", "GIT"]
+        self.assertEqual(sort_tokens(tokens, "data_scientist"), expected)
+
+    def test_cloud_engineer(self):
+        tokens = ["GIT", "TERRAFORM", "KUBERNETES", "AWS", "LINUX"]
+        expected = ["LINUX", "AWS", "KUBERNETES", "TERRAFORM", "GIT"]
+        self.assertEqual(sort_tokens(tokens, "cloud_engineer"), expected)
+
     def test_tokens_outside_the_profile_go_last(self):
         tokens = ["KERAS", "GIT", "REACT"]
         self.assertEqual(sort_tokens(tokens, "full_stack"), ["REACT", "GIT", "KERAS"])

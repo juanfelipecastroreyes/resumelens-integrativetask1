@@ -71,6 +71,16 @@ CATEGORIES = {
         ["cv", "COMPUTER_VISION"],
         ["mlops", "MLOPS"],
     ],
+    "cloud": [
+        ["linux", "LINUX"],
+        ["azure", "AZURE"],
+        ["gcp", "GCP"],
+        ["googlecloud", "GCP"],
+        ["googlecloudplatform", "GCP"],
+        ["kubernetes", "KUBERNETES"],
+        ["k8s", "KUBERNETES"],
+        ["terraform", "TERRAFORM"],
+    ],
 }
 
 def simplify(text):

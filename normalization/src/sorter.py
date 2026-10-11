@@ -8,12 +8,26 @@ PROFILE_ORDER = {
         "GIT",
     ],
     "ml_engineer": [
-        "PYTHON", "R_LANG", "SQL",
+        "PYTHON", "R_LANG", "SQL", "POSTGRESQL", "MYSQL",
         "PANDAS", "NUMPY",
         "SCIKIT_LEARN", "TENSORFLOW", "PYTORCH", "KERAS",
         "MACHINE_LEARNING", "DEEP_LEARNING", "NLP", "COMPUTER_VISION",
         "MLOPS",
         "DOCKER", "AWS",
+        "GIT",
+    ],
+    "data_scientist": [
+        "PYTHON", "R_LANG", "SQL", "POSTGRESQL", "MYSQL",
+        "PANDAS", "NUMPY",
+        "SCIKIT_LEARN", "MACHINE_LEARNING", "DEEP_LEARNING", "NLP", "COMPUTER_VISION",
+        "TENSORFLOW", "PYTORCH", "KERAS",
+        "GIT",
+    ],
+    "cloud_engineer": [
+        "LINUX", "PYTHON",
+        "AWS", "AZURE", "GCP",
+        "DOCKER", "KUBERNETES",
+        "TERRAFORM", "CI_CD",
         "GIT",
     ],
 }

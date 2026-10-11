@@ -55,6 +55,11 @@ Example: `Node.js`, `NodeJS` and `node` all become `NODE_JS`.
 | Data and ML | `NLP` | nlp, natural language processing |
 | Data and ML | `COMPUTER_VISION` | computer vision, cv |
 | Data and ML | `MLOPS` | mlops |
+| Cloud | `LINUX` | linux |
+| Cloud | `AZURE` | azure |
+| Cloud | `GCP` | gcp, google cloud, google cloud platform |
+| Cloud | `KUBERNETES` | kubernetes, k8s |
+| Cloud | `TERRAFORM` | terraform |
 
 ## 4. Short abbreviations
 
@@ -67,7 +72,5 @@ only as whole words written in uppercase, exactly as shown here.
 |---|---|
 | Full Stack Developer | Languages, Frontend, Backend, Databases, DevOps |
 | Machine Learning Engineer | `PYTHON`, `SQL`, Data and ML, `DOCKER`, `GIT`, `AWS` |
-| Team profile (software) | Pending |
-| Team profile (AI / data) | Pending |
-
-Tokens for the two team profiles will be added in the same format.
+| Data Scientist (team profile, AI / data) | `PYTHON`, `R_LANG`, databases, Data and ML, `GIT` |
+| Cloud Engineer (team profile, software) | `AWS`, `AZURE`, `GCP`, `DOCKER`, `KUBERNETES`, `TERRAFORM`, `CI_CD`, `LINUX`, `PYTHON`, `GIT` |

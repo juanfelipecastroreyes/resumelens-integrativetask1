@@ -63,6 +63,15 @@ class TestNormalizeSkill(unittest.TestCase):
         self.check("node", "NODE_JS")
         self.check("nodejs", "NODE_JS")
 
+    def test_cloud(self):
+        self.check("Kubernetes", "KUBERNETES")
+        self.check("k8s", "KUBERNETES")
+        self.check("Google Cloud", "GCP")
+        self.check("GCP", "GCP")
+        self.check("Azure", "AZURE")
+        self.check("Terraform", "TERRAFORM")
+        self.check("Linux", "LINUX")
+
     def test_unknown_skill(self):
         self.check("Cobol", None)
         self.check("nod", None)
