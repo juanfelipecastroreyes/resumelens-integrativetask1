@@ -88,6 +88,10 @@ class TestSkills(unittest.TestCase):
     def test_rest_api_is_one_skill(self):
         self.assertEqual(extract_skills("REST APIs"), ["REST APIs"])
 
+    def test_cloud_skills(self):
+        text = "Skills: Linux, Azure, GCP, Google Cloud, k8s, Terraform."
+        self.assertEqual(extract_skills(text), ["Linux", "Azure", "GCP", "Google Cloud", "k8s", "Terraform"])
+
 class TestExamples(unittest.TestCase):
     def test_fullstack_01(self):
         result = load("fullstack_01")

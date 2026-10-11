@@ -48,9 +48,9 @@ The output is `NODE_JS`.
 
 Because a spelling that is not in the list has no chain that ends in an accepting state, the transducer gives no output for it. The code reports those skills as unknown. A shorter or longer text is not accepted either: `nod` or `nodejss` give no output.
 
-## 5. The six transducers
+## 5. The seven transducers
 
-The tokens are split by category, so each transducer has a small and clear purpose. The code tries the six transducers in order until one of them gives an output.
+The tokens are split by category, so each transducer has a small and clear purpose. The code tries the seven transducers in order until one of them gives an output.
 
 | Transducer | Tokens (Γ) | Spellings | Number of states |
 |---|---|---|---|
@@ -60,6 +60,7 @@ The tokens are split by category, so each transducer has a small and clear purpo
 | Databases (`databases`) | 3 | 5 | 36 |
 | DevOps and tools (`devops`) | 4 | 5 | 34 |
 | Data and machine learning (`data_ml`) | 11 | 17 | 137 |
+| Cloud (`cloud`) | 5 | 8 | 66 |
 
 ### 5.1 Programming languages (`languages`)
 
@@ -247,6 +248,34 @@ Diagram, compact version (each chain of states is drawn as one arrow with the wh
 
 The complete diagram has 137 states and is too wide to read on a page. It is saved in `docs/diagrams/transducers/data_ml_full.png`.
 
+### 5.7 Cloud (`cloud`)
+
+- **Q** = {q0, q1, ..., q65} (66 states)
+- **Σ** = {8, a, b, c, d, e, f, g, i, k, l, m, n, o, p, r, s, t, u, x, z}
+- **Γ** = {AZURE, GCP, KUBERNETES, LINUX, TERRAFORM}
+- **q0** = q0
+- **F** = 8 accepting states, one for each spelling
+- **δ and ω**: 65 transitions, listed in the appendix (section 8).
+
+Accepted spellings:
+
+| Spelling | Output |
+|---|---|
+| `linux` | `LINUX` |
+| `azure` | `AZURE` |
+| `gcp` | `GCP` |
+| `googlecloud` | `GCP` |
+| `googlecloudplatform` | `GCP` |
+| `kubernetes` | `KUBERNETES` |
+| `k8s` | `KUBERNETES` |
+| `terraform` | `TERRAFORM` |
+
+Diagram, compact version (each chain of states is drawn as one arrow with the whole spelling):
+
+![cloud compact](diagrams/transducers/cloud_compact.png)
+
+The complete diagram has 66 states and is too wide to read on a page. It is saved in `docs/diagrams/transducers/cloud_full.png`.
+
 In the compact diagrams every spelling goes to its own copy of `qf`. This is only to keep the drawing clean: each copy stands for the accepting state at the end of that chain.
 
 ## 6. Sorting the normalized tokens
@@ -256,9 +285,9 @@ After normalization the tokens are sorted with a fixed order defined by the prof
 | Profile | Order |
 |---|---|
 | `full_stack` | JAVASCRIPT, TYPESCRIPT, JAVA, PYTHON, HTML, CSS, REACT, ANGULAR, VUE, NODE_JS, EXPRESS, SPRING_BOOT, DJANGO, FLASK, REST_API, SQL, POSTGRESQL, MYSQL, MONGODB, DOCKER, AWS, CI_CD, GIT |
-| `ml_engineer` | PYTHON, R_LANG, SQL, PANDAS, NUMPY, SCIKIT_LEARN, TENSORFLOW, PYTORCH, KERAS, MACHINE_LEARNING, DEEP_LEARNING, NLP, COMPUTER_VISION, MLOPS, DOCKER, AWS, GIT |
-| Team profile (software) | Pending |
-| Team profile (AI / data) | Pending |
+| `ml_engineer` | PYTHON, R_LANG, SQL, POSTGRESQL, MYSQL, PANDAS, NUMPY, SCIKIT_LEARN, TENSORFLOW, PYTORCH, KERAS, MACHINE_LEARNING, DEEP_LEARNING, NLP, COMPUTER_VISION, MLOPS, DOCKER, AWS, GIT |
+| `data_scientist` | PYTHON, R_LANG, SQL, POSTGRESQL, MYSQL, PANDAS, NUMPY, SCIKIT_LEARN, MACHINE_LEARNING, DEEP_LEARNING, NLP, COMPUTER_VISION, TENSORFLOW, PYTORCH, KERAS, GIT |
+| `cloud_engineer` | LINUX, PYTHON, AWS, AZURE, GCP, DOCKER, KUBERNETES, TERRAFORM, CI_CD, GIT |
 
 Example for the Full Stack profile:
 
@@ -687,4 +716,74 @@ Each line is `(state, symbol) -> (next state, output)`, which means that from `s
 (q133, o) -> (q134, ε)
 (q134, p) -> (q135, ε)
 (q135, s) -> (q136, ε)
+```
+
+### Cloud (`cloud`)
+
+```
+(q0, a) -> (q6, AZURE)
+(q0, g) -> (q11, GCP)
+(q0, g) -> (q14, GCP)
+(q0, g) -> (q25, GCP)
+(q0, k) -> (q44, KUBERNETES)
+(q0, k) -> (q54, KUBERNETES)
+(q0, l) -> (q1, LINUX)
+(q0, t) -> (q57, TERRAFORM)
+(q1, i) -> (q2, ε)
+(q2, n) -> (q3, ε)
+(q3, u) -> (q4, ε)
+(q4, x) -> (q5, ε)
+(q6, z) -> (q7, ε)
+(q7, u) -> (q8, ε)
+(q8, r) -> (q9, ε)
+(q9, e) -> (q10, ε)
+(q11, c) -> (q12, ε)
+(q12, p) -> (q13, ε)
+(q14, o) -> (q15, ε)
+(q15, o) -> (q16, ε)
+(q16, g) -> (q17, ε)
+(q17, l) -> (q18, ε)
+(q18, e) -> (q19, ε)
+(q19, c) -> (q20, ε)
+(q20, l) -> (q21, ε)
+(q21, o) -> (q22, ε)
+(q22, u) -> (q23, ε)
+(q23, d) -> (q24, ε)
+(q25, o) -> (q26, ε)
+(q26, o) -> (q27, ε)
+(q27, g) -> (q28, ε)
+(q28, l) -> (q29, ε)
+(q29, e) -> (q30, ε)
+(q30, c) -> (q31, ε)
+(q31, l) -> (q32, ε)
+(q32, o) -> (q33, ε)
+(q33, u) -> (q34, ε)
+(q34, d) -> (q35, ε)
+(q35, p) -> (q36, ε)
+(q36, l) -> (q37, ε)
+(q37, a) -> (q38, ε)
+(q38, t) -> (q39, ε)
+(q39, f) -> (q40, ε)
+(q40, o) -> (q41, ε)
+(q41, r) -> (q42, ε)
+(q42, m) -> (q43, ε)
+(q44, u) -> (q45, ε)
+(q45, b) -> (q46, ε)
+(q46, e) -> (q47, ε)
+(q47, r) -> (q48, ε)
+(q48, n) -> (q49, ε)
+(q49, e) -> (q50, ε)
+(q50, t) -> (q51, ε)
+(q51, e) -> (q52, ε)
+(q52, s) -> (q53, ε)
+(q54, 8) -> (q55, ε)
+(q55, s) -> (q56, ε)
+(q57, e) -> (q58, ε)
+(q58, r) -> (q59, ε)
+(q59, r) -> (q60, ε)
+(q60, a) -> (q61, ε)
+(q61, f) -> (q62, ε)
+(q62, o) -> (q63, ε)
+(q63, r) -> (q64, ε)
+(q64, m) -> (q65, ε)
 ```
