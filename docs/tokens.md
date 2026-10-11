@@ -66,7 +66,7 @@ Example: `Node.js`, `NodeJS` and `node` all become `NODE_JS`.
 `R`, `CV`, `TS` and `TF` are short and can match unrelated words. They count
 only as whole words written in uppercase, exactly as shown here.
 
-## 5. Profile groups
+## 5. Tokens used by each profile when sorting
 
 | Profile | Token groups |
 |---|---|
