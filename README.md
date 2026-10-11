@@ -2,7 +2,7 @@
 
 Integrative Task 1 of Computing and Discrete Structures III (CyED3), 2026-2, ICESI.
 
-Authors: Juan Felipe Castro Reyes and Sebastián Mejía.
+Authors: Juan Felipe Castro Reyes and Sebastián Mejía Trujillo.
 
 ResumeLens reads a plain-text résumé and decides which job profile fits the candidate. It does this only with tools from formal language theory: regular expressions, finite-state transducers, finite automata and a domain-specific language.
 
