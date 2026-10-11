@@ -41,7 +41,7 @@ Stage 3 and the full pipeline are still in progress.
 
 ## Requirements
 
-- Python 3.10 or newer
+- Python 3.9 or newer
 - The packages in `requirements.txt` (textX and pyformlang)
 
 ```
