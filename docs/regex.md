@@ -86,6 +86,7 @@ Each skill is a short expression. Two rules are used for all of them:
 | Databases | PostgreSQL, MySQL, MongoDB |
 | DevOps | Docker, Git, AWS, CI/CD |
 | Data and ML | Pandas, NumPy, Scikit-learn, TensorFlow, PyTorch, Keras, machine learning, deep learning, NLP, computer vision, MLOps |
+| Cloud | Linux, Azure, GCP, Google Cloud, Kubernetes, K8s, Terraform |
 
 The code returns each skill as it was written in the résumé, for example
 `NodeJS`, `Tensor Flow` or `sklearn`. It does not change the spelling. The
