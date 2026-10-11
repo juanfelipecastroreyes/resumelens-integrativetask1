@@ -26,7 +26,7 @@ per parsed `.resume` file.
 | `education` | `Education` | 0..* | Education records, in file order |
 | `skills` | `Skill` | 0..* | Informal skill tags |
 | `qualifications` | `Qualification` | 0..* | Normalized, leveled qualifications |
-| `classification` | `Classification` | 1 | The candidate profile's final classification |
+| `classifications` | `Classification` | 1..* | The candidate profile's classifications, in file order |
 
 ### 2.2 `PersonalInfo`
 
@@ -81,7 +81,7 @@ a plain Python string (`"Expert"`, etc.), not an instance of another class.
 
 | Attribute | Type | Description |
 |---|---|---|
-| `label` | `STRING` | The result of the candidate profile classification, e.g. `"Backend Developer"` |
+| `label` | `STRING` | One classification result, e.g. `"Backend Developer"`. A resume has one or more of them |
 
 ## 3. Diagram
 
@@ -94,7 +94,7 @@ classDiagram
         +Education[] education
         +Skill[] skills
         +Qualification[] qualifications
-        +Classification classification
+        +Classification[] classifications
     }
 
     class PersonalInfo {
