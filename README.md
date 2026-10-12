@@ -48,7 +48,9 @@ A candidate can be accepted by more than one profile. If no profile accepts the 
 │   ├── automata.md        Stage 3: finite automata as 5-tuples
 │   ├── grammar.md         Stage 4: EBNF grammar
 │   ├── metamodel.md       Stage 4: textX metamodel
+│   ├── modules.md         module flow, functions, inputs and outputs
 │   ├── ai-usage.md        AI usage log
+│   ├── poster/            research poster (PDF)
 │   └── diagrams/          transducer, automata and parse-tree diagrams
 ├── extraction/            src, tests, examples, output
 ├── normalization/         src, tests
@@ -151,6 +153,7 @@ python3 -m unittest discover -s tests
 - [DSL metamodel](docs/metamodel.md)
 - [AI usage log](docs/ai-usage.md)
 - [Finite automata](docs/automata.md)
+- [Module design](docs/modules.md)
 
 ## AI usage
 
